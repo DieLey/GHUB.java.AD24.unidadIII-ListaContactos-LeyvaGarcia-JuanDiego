@@ -15,6 +15,18 @@ public class ClienteMain {
             for(int i=0;i<listado.getTamanio();i++){
                 System.out.println(listado.getValor(i));
             }
+            ldc.modificarContactos("Fernando", "Castro", "calle las rosas 200 pte Los Mochis, Sinaloa", "fernandoc@gmail.com","6687121212" ,"6687511511" );
+
+            System.out.println("Mostrar todos los contacto");
+            listado = ldc.mostrarTodosLosContactos();
+            for(int i=0;i<listado.getTamanio();i++){
+                System.out.println(listado.getValor(i));
+            }
+            ldc.eliminarContactos("Fernando", "Castro");
+            listado = ldc.mostrarTodosLosContactos();
+            for(int i=0;i<listado.getTamanio();i++){
+                System.out.println(listado.getValor(i));
+            }
 
         }catch(PosicionIlegalException e){
             e.printStackTrace();
